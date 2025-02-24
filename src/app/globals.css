@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #0ea5e9;
+  --primary-dark: #0369a1;
+  --secondary: #64748b;
+  --secondary-dark: #334155;
+}
+
+.dark {
+  --primary: #38bdf8;
+  --primary-dark: #0ea5e9;
+  --secondary: #94a3b8;
+  --secondary-dark: #64748b;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-full font-medium transition-all duration-300;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-secondary-600 hover:bg-secondary-700 text-white rounded-full font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg dark:bg-secondary-500 dark:hover:bg-secondary-600;
+  }
+
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 transition-all duration-300 hover:shadow-2xl;
+  }
+
+  .input {
+    @apply w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-all duration-300;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-secondary-500;
+  }
+
+  .text-shadow-lg {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  display: none;
+}
+
+/* Glass Effect */
+.glass {
+  @apply backdrop-blur-lg bg-white/30 dark:bg-gray-900/30;
+}
+
+/* Animated Background */
+.animated-bg {
+  background: linear-gradient(-45deg, #0ea5e9, #64748b, #0369a1, #334155);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Blob Animations */
+.blob {
+  border-radius: 71% 29% 41% 59% / 57% 43% 57% 43%;
+  animation: blob 8s ease-in-out infinite;
+}
+
+.blob-2 {
+  border-radius: 50% 50% 30% 70% / 50% 50% 50% 50%;
+  animation: blob 12s ease-in-out infinite reverse;
+}
+
+@keyframes blob {
+  0% {
+    border-radius: 71% 29% 41% 59% / 57% 43% 57% 43%;
+  }
+  50% {
+    border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%;
+  }
+  100% {
+    border-radius: 71% 29% 41% 59% / 57% 43% 57% 43%;
+  }
+}
+
+/* Firefox için */
+* {
+  scrollbar-width: none;
+}
+
+/* IE ve Edge için */
+* {
+  -ms-overflow-style: none;
+}
