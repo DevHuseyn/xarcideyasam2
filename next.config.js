@@ -29,10 +29,7 @@ const nextConfig = {
     ],
     domains: ['ppqbegwpsznzuvfskthe.supabase.co'],
   },
-  experimental: {
-    optimizeCss: true
-  },
-  // Fast Refresh və development opsiyaları
+  // Fast Refresh ve development opsiyaları
   webpack: (config, { dev, isServer }) => {
     if (dev && !isServer) {
       config.watchOptions = {
@@ -46,4 +43,4 @@ const nextConfig = {
   reactStrictMode: true,
 }
 
-module.exports = nextConfig 
+module.exports = nextConfig
