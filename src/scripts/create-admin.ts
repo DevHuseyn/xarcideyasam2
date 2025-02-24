@@ -36,7 +36,11 @@ async function createAdmin() {
     console.log('Email:', 'turalxaricde@xaricdeyasam.com');
     console.log('Şifre:', 'resadxaricde');
   } catch (error) {
-    console.error('Hata:', error.message);
+    if (error instanceof Error) {
+      console.error('Hata:', error.message);
+    } else {
+      console.error('Bilinmeyen hata:', error);
+    }
   }
 }
 
